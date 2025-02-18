@@ -2,73 +2,127 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Trang Web Cá Nhân</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Cá Nhân - Cyberpunk</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-	h2 {text-align: center}
-	p {text-align: center}
-	@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
         body {
-            background: linear-gradient(135deg, #0f0f0f, #1f003f, #0f0f0f);
-            color: #00ffff;
-        p,p {font-family: monospace;}
-	h2 {font-size: x-large;}
-	p {font-size: large;}
-	h2 {font-weight: 900;}
-
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #00ffcc;
+            overflow-x: hidden;
         }
-        header, footer {
-            background: linear-gradient(135deg, #ff00ff, #0000ff, #800080);
-            box-shadow: 0 0 20px #00fff7;
+        h1, h2 {
+            text-shadow: 0 4px 20px rgba(0, 255, 204, 1), 0 0 30px rgba(255, 0, 144, 0.8);
+            animation: glow 1.5s infinite alternate;
         }
-        section {
-            background: rgba(0, 0, 0, 0.85);
-            box-shadow: 0 0 20px #ff00c8;
-            border: 2px solid #00fff7;
-            border-radius: 1rem;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
+        @keyframes glow {
+            from {
+                text-shadow: 0 4px 20px rgba(0, 255, 204, 1), 0 0 30px rgba(255, 0, 144, 0.8);
+            }
+            to {
+                text-shadow: 0 4px 30px rgba(0, 255, 204, 0.8), 0 0 40px rgba(255, 0, 144, 1);
+            }
         }
         .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 4px solid #ff00c8;
-            display: block;
-            margin: 20px auto;
+            transition: transform 0.3s ease-in-out;
         }
-        </style>
+        .profile-img:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 30px #ff0090);
+        }
+        footer {
+            background: linear-gradient(135deg, #ff0090, #7900ff);
+            text-shadow: 0 4px 10px rgba(0, 255, 231, 0.8);
+        }
+        section {
+            background: rgba(10, 10, 30, 0.95);
+            border: 2px solid #00ffcc;
+            box-shadow: 0 0 40px rgba(0, 255, 204, 0.7), 0 0 20px rgba(255, 0, 144, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(0, 255, 204, 0.9), 0 0 30px rgba(255, 0, 144, 0.7);
+        }
+        ul li {
+            text-shadow: 0 4px 15px rgba(255, 0, 144, 0.7), 0 0 20px rgba(0, 255, 204, 0.6);
+        }
+        .neon-border {
+            border: 4px solid;
+            border-image-slice: 1;
+            border-width: 4px;
+            border-image-source: linear-gradient(135deg, #ff0090, #00ffcc);
+        }
+        .neon-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #00ffcc;
+            background: linear-gradient(135deg, #ff0090, #7900ff);
+            border: 2px solid #00ffcc;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.7), 0 0 10px rgba(255, 0, 144, 0.5);
+            transition: all 0.3s ease;
+        }
+        .neon-button:hover {
+            background: linear-gradient(135deg, #7900ff, #ff0090);
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.9), 0 0 20px rgba(255, 0, 144, 0.7);
+            transform: scale(1.05);
+        }
+        .illustration-img {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-    <header class="p-16 text-center">
-        <h1 class="text-5xl font-orbitron animate-pulse">DO HA MINH THAI</h1>
+    <header class="p-12 text-center bg-gradient-to-r from-purple-800 via-pink-700 to-blue-700 shadow-lg">
+        <h1 class="text-6xl font-bold text-teal-200 animate-pulse">-WELCOME TO MY WEBSITE-</h1>
     </header>
-         <section id="profile">
-            <h2>Giới thiệu bản thân</h2>
-            <img src="imagines/avatar.jpg" alt="Ảnh cá nhân" class="profile-img">
-            <p> Xin chào! Tôi là Đỗ Hà Minh Thái, học sinh lớp 12C5B-Trường THPT Chuyên Hùng Vương.</p>
+
+    <main class="py-10">
+        <section id="profile" class="p-8 rounded-lg neon-border mx-auto max-w-3xl">
+            <h2 class="text-4xl font-semibold text-center text-pink-400">Giới thiệu bản thân</h2>
+            <img src="imagines/avatar.jpg" alt="Ảnh cá nhân" class="profile-img w-48 h-48 mx-auto mt-6 rounded-full border-4 border-pink-400">
+            <p class="text-center mt-6 text-lg text-teal-200">Xin chào! Tôi là Đỗ Hà Minh Thái, học sinh lớp 12C5B - Trường THPT Chuyên Hùng Vương.</p>
         </section>
-        <section id="hobbies">
-            <h2>Sở Thích</h2>
-            <p>Bơi lội, đọc sách, chơi game.</p>
+
+        <section id="hobbies" class="p-8 rounded-lg neon-border mx-auto max-w-3xl mt-10">
+            <h2 class="text-4xl font-semibold text-center text-pink-400">Sở Thích</h2>
+            <p class="text-center mt-6 text-lg text-teal-200">Bơi lội, đọc sách, chơi game.</p>
         </section>
-        <section id="favorite-subjects">
-            <h2>Môn Học Yêu Thích</h2>
-            <p>Toán học, Hóa học, Vật lý.</p>
+
+        <section id="favorite-subjects" class="p-8 rounded-lg neon-border mx-auto max-w-3xl mt-10">
+            <h2 class="text-4xl font-semibold text-center text-pink-400">Môn Học Yêu Thích</h2>
+            <p class="text-center mt-6 text-lg text-teal-200">Toán học, Hóa học, Vật lý.</p>
+ 	    <img src="https://st2.depositphotos.com/2705835/9320/v/450/depositphotos_93209610-stock-illustration-vector-physics-pattern.jpg" alt="Hình ảnh môn học" class="illustration-img rounded-lg mt-4">
+
         </section>
-        <section id="achievements">
-            <h2>Thành Tích</h2>
-            <ul>
+
+        <section id="achievements" class="p-8 rounded-lg neon-border mx-auto max-w-3xl mt-10">
+            <h2 class="text-4xl font-semibold text-center text-pink-400">Thành Tích</h2>
+       
+            <ul class="mt-6 text-lg text-center space-y-4 text-teal-200">
                 <li>🥈 Giải nhì cuộc thi KHKT cấp quốc gia.</li>
                 <li>🥉 Giải ba cuộc thi khởi nghiệp quốc gia.</li>
-                <li>🤖 Thành viên CLB Robotics trường THPT Hùng Vương.</li>
+                <li>🤖 Thành viên CLB Robotics trường THPT Hùng Vương.</li>   
+	        <img src="https://th.bing.com/th/id/OIP.ZxScoOpnJ_xNv4VKR1QokQHaEo?rs=1&pid=ImgDetMain" alt="Hình ảnh thành tích" class="illustration-img rounded-lg mt-4">
             </ul>
         </section>
-         </main>
-    <footer>
-        <p>SDT: 0905069486</p>	
-	<p>Email: dhmt@gmail.com.</p>
+
+        <div class="text-center my-8">
+            <a href="https://nghnghair.github.io/nhom-5-chi-em-siu-nhan/" class="neon-button">Quay lại trang chính</a>
+        </div>
+    </main>
+
+    <footer class="p-6 text-center text-teal-200">
+        <p>📞 SĐT: 0905069486</p>
+        <p>📧 Email: dhmt@gmail.com</p>
     </footer>
 </body>
 </html>
